@@ -5,10 +5,6 @@ module.exports = function(app,path){
     var reservations=require("./reservedata");
     var waitingList=require("./waitlistdata");
 
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "./index.html"));
-    });
-
     // Basic route that sends the user first to the AJAX Page
     app.get("/api/tables", function(req, res) {
     res.json(reservations);
@@ -18,6 +14,7 @@ module.exports = function(app,path){
     app.get("/api/waitlist", function(req, res) {
         res.json(waitingList)
     });
+
 
     app.post("/api/reserve", function(req, res) {
         var newReservation = req.body;
