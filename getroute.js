@@ -18,7 +18,7 @@ module.exports = function(app,path){
 
     app.post("/api/reserve", function(req, res) {
         var newReservation = req.body;
-        newReservation.customerName = newReservation.customerName.replace(/\s+/g, "").toLowerCase();
+        //newReservation.customerName = newReservation.customerName.replace(/\s+/g, "").toLowerCase();
         console.log("newReservation", newReservation);
         if (reservations.length < 5){
             reservations.push(newReservation);
