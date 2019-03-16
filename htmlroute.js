@@ -12,7 +12,7 @@ module.exports = function(app,path){
 
      // make reservation page
       app.get("/tables", function(req, res) {
-        res.sendFile(path.join(__dirname, "./tables.html"));
+        res.sendFile(path.join(__dirname, "./viewtables.html"));
     });
 
 };
