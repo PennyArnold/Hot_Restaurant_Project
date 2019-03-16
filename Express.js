@@ -8,15 +8,15 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-//require data
-var reservations=require("./reservedata");
-var waitingList=require("./waitlistdata");
-
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var route = require("./getroute")(app);
+ 
+
+  //routes
+var route = require("./getroute")(app,path);
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {

@@ -1,11 +1,12 @@
-module.exports = function(app,reservations){
+module.exports = function(app,path){
     // Basic route that sends the user first to the AJAX Page
-    //require data
+  
+     //require data
     var reservations=require("./reservedata");
     var waitingList=require("./waitlistdata");
-    
+
     app.get("/", function(req, res) {
-        res.send("Home")
+        res.sendFile(path.join(__dirname, "./index.html"));
     });
 
     // Basic route that sends the user first to the AJAX Page
@@ -15,7 +16,22 @@ module.exports = function(app,reservations){
 
     // Basic route that sends the user first to the AJAX Page
     app.get("/api/waitlist", function(req, res) {
-        res.send("welcome3")
-        });
-}
+        res.json(waitingList)
+    });
+
+    app.post("/api/reserve", function(req, res) {
+        var newReservation = req.body;
+        newReservation.customerName = newReservation.customerName.replace(/\s+/g, "").toLowerCase();
+        console.log("newReservation", newReservation);
+        if (reservations.length < 5){
+            reservations.push(newReservation);
+        }
+        else{
+            waitingList.push(newReservation);
+        }
+
+        res.json(newReservation);
+    })
+
+};
 
