@@ -22,9 +22,11 @@ module.exports = function(app,path){
         console.log("newReservation", newReservation);
         if (reservations.length < 5){
             reservations.push(newReservation);
+            alert("Yay! You are officially booked!");
         }
         else{
             waitingList.push(newReservation);
+            alert("Yay! You are officially booked!");
         }
 
         res.json(newReservation);
