@@ -90,12 +90,20 @@
         phoneNumber: $("#inputPhoneNumber").val().trim(),
         email: $("#inputemail").val().trim(),
         id: $("#inputID").val().trim()
-      };
-    $.post("/api/reserve", newReservation)
-        .then(function(data) {
-          console.log("makereservations.html", data);
-          alert("⏰ Adding New Reservation...");
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/api/reserve",
+        data: newReservation
     });
+
+    // $.ajax("/api/reserve", newReservation)
+    //     .then(function(data) {
+    //       console.log("makereservations.html", data);
+    //       alert("⏰ Adding New Reservation...");
+    // });
+
     });
 
 
