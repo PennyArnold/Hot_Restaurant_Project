@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,114 +8,123 @@
     <title>Restaurants</title>
     <!--jQuery-->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <!-- We need to copy the bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
+
 <body>
 
-<!-- 1) A front-end set of HTML/CSS/JS pages for entering and viewing data -->
-<!-- 2) A back-end composed of Node/Express and basic JS for storing, updating, and relaying reservation data. -->
-<!-- First, set up initial files and connect files -->
-<!-- Link boostrap & add jumbotron -->
-<!-- add buttons. Then, add form -->
-<!-- grab imputs -->
-<!-- make ajax calls -->
-<div class='container'>
-    <div class="jumbotron">
-        <h1 class="display-4">🔥 Hot Restaurants</h1>
-        <p class="lead">We only have 5 tables! Book your seat before they all are gone!</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="/tables" role="button">📋 View Tables</a>
-        <a class="btn btn-primary btn-lg" href="/" role="button">🏠</a>
-    </div>
-</div>
-
-<br>
-
-<div class='container' id='waitingListDiv'>
-    <div class="card">
-        <div class="card-header">
-            <h5>Waiting List</h5>
+    <!-- 1) A front-end set of HTML/CSS/JS pages for entering and viewing data -->
+    <!-- 2) A back-end composed of Node/Express and basic JS for storing, updating, and relaying reservation data. -->
+    <!-- First, set up initial files and connect files -->
+    <!-- Link boostrap & add jumbotron -->
+    <!-- add buttons. Then, add form -->
+    <!-- grab imputs -->
+    <!-- make ajax calls -->
+    <div class='container'>
+        <div class="jumbotron">
+            <h1 class="display-4">🔥 Hot Restaurants</h1>
+            <p class="lead">We only have 5 tables! Book your seat before they all are gone!</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="/tables" role="button">📋 View Tables</a>
+            <a class="btn btn-primary btn-lg" href="/" role="button">🏠</a>
         </div>
-        <div class="card-body">
-        
-            
-            
-            <div class='container' id='formDiv'>
-                <form method='POST' role='form'>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+    </div>
+
+    <br>
+
+    <div class='container' id='waitingListDiv'>
+        <div class="card">
+            <div class="card-header">
+                <h5>Waiting List</h5>
+            </div>
+            <div class="card-body">
+
+
+
+                <div class='container' id='formDiv'>
+                    <form method='POST' role='form'>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Phone Number</label>
+                                <input type="text" class="form-control" id="inputPhoneNumber" placeholder="phoneNumber">
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4">Phone Number</label>
-                            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="phoneNumber">
+                        <div class="form-group">
+                            <label for="inputAddress">email</label>
+                            <input type="text" class="form-control" id="inputemail" placeholder="email">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress">email</label>
-                        <input type="text" class="form-control" id="inputemail" placeholder="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress2">Unique ID</label>
-                        <input type="text" class="form-control" id="inputID" placeholder="ID">
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
+                        <div class="form-group">
+                            <label for="inputAddress2">Unique ID</label>
+                            <input type="text" class="form-control" id="inputID" placeholder="ID">
                         </div>
-                    </div>
-                    <button id='reserveButton' type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                        <div class="form-group">
+                            <div class="form-check">
+                            </div>
+                        </div>
+                        <button id='reserveButton' type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- click event functions in jsvascript file-->
-<script type='text/javascript'>
- // Question: What does this code do?
- $("#reserveButton").on("click", function(event) {
-      event.preventDefault();
-      var newReservation = {
-        name: $("#name").val().trim(),
-        phoneNumber: $("#inputPhoneNumber").val().trim(),
-        email: $("#inputemail").val().trim(),
-        id: $("#inputID").val().trim()
-    };
+    <!-- click event functions in jsvascript file-->
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            // Question: What does this code do?
+            $("#reserveButton").on("click", function (event) {
+                event.preventDefault();
+                var newReservation = {
+                    name: $("#name").val().trim(),
+                    phoneNumber: $("#inputPhoneNumber").val().trim(),
+                    email: $("#inputemail").val().trim(),
+                    id: $("#inputID").val().trim()
+                };
 
-    $.ajax({
-        type: "POST",
-        url: "/api/reserve",
-        data: newReservation
-    });
+                $.ajax({
+                    type: "POST",
+                    url: "/api/reserve",
+                    data: newReservation
+                });
 
-    // $.ajax("/api/reserve", newReservation)
-    //     .then(function(data) {
-    //       console.log("makereservations.html", data);
-    //       alert("⏰ Adding New Reservation...");
-    // });
+                // $.ajax("/api/reserve", newReservation)
+                //     .then(function(data) {
+                //       console.log("makereservations.html", data);
+                //       alert("⏰ Adding New Reservation...");
+                // });
 
-    });
-
-
+            });
 
 
-</script>
+        })
 
-  
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
+
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
